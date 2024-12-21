@@ -32,7 +32,7 @@ useEffect(() => {
 
 
 const handleLogin = (email, password) => {
-  if (AuthData  && AuthData.admin.find((e)=>email === e.email && password === e.password)) {
+  if (email == "admin@e.com" && password == "123") {
     setUser('admin');
     localStorage.setItem('loggedInUser',JSON.stringify({role:'admin'}))
   } else if (AuthData){
