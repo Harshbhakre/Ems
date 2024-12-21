@@ -5,17 +5,6 @@ import TaskList from '../TaskList/TaskList'
 
 const EmployeeDashboard = (props) => {
 
-  const [tasks, setTasks] = useState([]);
-  useEffect(() => {
-      if (!localStorage.getItem('tasks')) {
-          localStorage.setItem('tasks', JSON.stringify([]));
-      }
-
-      const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
-      setTasks(storedTasks);
-  }, []);
-
-
 
   return (
     <div>
