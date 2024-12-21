@@ -48,6 +48,21 @@ const handleLogin = (email, password) => {
   }
 };
 
+
+
+const [tasks, setTasks] = useState([]);
+
+useEffect(() => {
+    // Ensure local storage is initialized
+    if (!localStorage.getItem('tasks')) {
+        localStorage.setItem('tasks', JSON.stringify([])); // Default value
+    }
+
+    // Fetch tasks from local storage
+    const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    setTasks(storedTasks); // Set tasks in state
+}, []);
+
   return (
     <div> 
     {!user ? (
